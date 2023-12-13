@@ -7543,7 +7543,7 @@ var hiprint = function (t) {
   jQuery, n = "connected", i = "reconnecting", window.hiwebSocket = {
     opened: !1,
     name: "webSockets",
-    host: "http://localhost:17521",
+    host: "http://192.168.31.139:17521",
     token: null,
     reconnectTimeout: 6e4,
     reconnectWindowSetTimeout: null,
@@ -9372,7 +9372,7 @@ var hiprint = function (t) {
             lastPaperFooter: e.lastPaperFooter,
             leftOffset: e.leftOffset,
             topOffset: e.topOffset,
-            panelLayoutOptions:e.panelLayoutOptions || {}, 
+            panelLayoutOptions:e.panelLayoutOptions || {},
             fontFamily: e.fontFamily,
             orient: e.orient,
             paperNumberDisabled: e.paperNumberDisabled,

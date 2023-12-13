@@ -1,5 +1,6 @@
 import $ from "jquery";
 import i18n from "@/demo/design/i18nUtil";
+
 const defaultConfig = window.HIPRINT_CONFIG
 export default (function () {
     function t() {
@@ -8,9 +9,9 @@ export default (function () {
 
     return t.prototype.createTarget = function (t, o) {
         var n = this;
-        let labelUnit= 'pt'
+        let labelUnit = 'pt'
         if (defaultConfig.sizeBoxUnitMM) {
-            labelUnit='mm'
+            labelUnit = 'mm'
         }
         n.target = $(`<div class="hiprint-option-item hiprint-option-item-row">
           <div class="hiprint-option-item-label">\n        ${i18n.__('宽高大小')}(${labelUnit})\n        </div>
@@ -51,11 +52,19 @@ export default (function () {
             // 仅当前元素被选中才更新宽高大小, 以避免冲突
             if (('block' == t.find('.resize-panel').css('display') || t[0].className.includes('table')) && this.el == t) {
                 var v = this.getValue();
-                const sizeBox = this.el.children()[1].children[0]
-                if ( defaultConfig.sizeBoxUnitMM) {
-                    sizeBox.innerHTML=hinnn.pt.toMm(v.width) + 'mm'+ ' x ' + hinnn.pt.toMm(v.height)+'mm'
-                }else {
-                    sizeBox.innerHTML=(v.width + 'pt'+ ' x '+v.height+'pt')
+                //获取sizeBox
+                let idx
+                for (let i = 0; i < this.el.children().length; i++) {
+                    if (this.el.children()[i].className === "resize-panel selected") {
+                        idx = i
+                        break
+                    }
+                }
+                const sizeBox = this.el.children()[idx].children[0]
+                if (defaultConfig.sizeBoxUnitMM) {
+                    sizeBox.innerHTML = hinnn.pt.toMm(v.width) + 'mm' + ' x ' + hinnn.pt.toMm(v.height) + 'mm'
+                } else {
+                    sizeBox.innerHTML = (v.width + 'pt' + ' x ' + v.height + 'pt')
                 }
                 return t.css("width", v.width + "pt").css("height", v.height + "pt");
             }
@@ -76,10 +85,10 @@ export default (function () {
         return v;
     }, t.prototype.setValue = function (t, el) {
         this.el = el.designTarget || el;
-        if ( defaultConfig.sizeBoxUnitMM) {
+        if (defaultConfig.sizeBoxUnitMM) {
             this.target.find("input:first").val(hinnn.pt.toMm(t.width));
             this.target.find("input:last").val(hinnn.pt.toMm(t.height));
-        }else {
+        } else {
             this.target.find("input:first").val(t.width);
             this.target.find("input:last").val(t.height);
         }
