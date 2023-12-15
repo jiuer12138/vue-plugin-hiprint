@@ -7,7 +7,7 @@ Vue.use(Antd);
 
 import {hiPrintPlugin} from './index'
 Vue.use(hiPrintPlugin)
-// hiPrintPlugin.disAutoConnect();
+hiPrintPlugin.disAutoConnect();
 
 import Storage from 'vue-ls'
 let options = {

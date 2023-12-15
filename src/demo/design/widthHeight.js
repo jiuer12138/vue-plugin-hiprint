@@ -54,17 +54,19 @@ export default (function () {
                 var v = this.getValue();
                 //获取sizeBox
                 let idx
-                for (let i = 0; i < this.el.children().length; i++) {
-                    if (this.el.children()[i].className === "resize-panel selected") {
+                for (let i = 0; i < this.el?.children().length; i++) {
+                    if (this.el?.children()[i].className === "resize-panel selected") {
                         idx = i
                         break
                     }
                 }
-                const sizeBox = this.el.children()[idx].children[0]
-                if (defaultConfig.sizeBoxUnitMM) {
-                    sizeBox.innerHTML = hinnn.pt.toMm(v.width) + 'mm' + ' x ' + hinnn.pt.toMm(v.height) + 'mm'
-                } else {
-                    sizeBox.innerHTML = (v.width + 'pt' + ' x ' + v.height + 'pt')
+                const sizeBox = this.el?.children()[idx]?.children[0]
+                if (sizeBox) {
+                    if (defaultConfig.sizeBoxUnitMM) {
+                        sizeBox.innerHTML = hinnn.pt.toMm(v.width) + 'mm' + ' x ' + hinnn.pt.toMm(v.height) + 'mm'
+                    } else {
+                        sizeBox.innerHTML = (v.width + 'pt' + ' x ' + v.height + 'pt')
+                    }
                 }
                 return t.css("width", v.width + "pt").css("height", v.height + "pt");
             }

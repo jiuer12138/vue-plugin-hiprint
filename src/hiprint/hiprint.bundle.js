@@ -5456,7 +5456,7 @@ var hiprint = function (t) {
       }, TablePrintElement.prototype.getConfigOptions = function () {
         return _HiPrintConfig__WEBPACK_IMPORTED_MODULE_1__.a.instance.table;
       }, TablePrintElement.prototype.createTarget = function (t, e, n) {
-        for (var i = $('<div class="hiprint-printElement hiprint-printElement-table" style="position: absolute;"><div class="hiprint-printElement-table-handle"></div><div class="hiprint-printElement-table-content" style="height:100%;width:100%"></span></div>'), o = this.createGridColumnsStructure(n), r = 0; r < o.gridColumns; r++) {
+        for (var i = $('<div class="hiprint-printElement hiprint-printElement-table" style="position: absolute;height: fit-content"><div class="hiprint-printElement-table-handle"></div><div class="hiprint-printElement-table-content" style="height:100%;width:100%"></span></div>'), o = this.createGridColumnsStructure(n), r = 0; r < o.gridColumns; r++) {
           o.getByIndex(r).append(this.getTableHtml(e, n));
         }
 

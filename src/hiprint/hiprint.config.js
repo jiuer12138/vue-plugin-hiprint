@@ -8,7 +8,7 @@
     positionUnit: true, //显示坐标单位
     positionUnitMM:true,//坐标单位是否改为毫米,true为mm，false为pt
     showSizeBox: true, //显示宽高box
-    sizeBoxUnitMM:true,//宽高单位是否改为毫米,true为mm，false为pt
+    sizeBoxUnitMM:false,//宽高单位是否改为毫米,true为mm，false为pt
     leftOffsetMM:true,//左偏移量单位是否改为毫米,true为mm，false为pt
     topOffsetMM:true,//顶部偏移量单位是否改为毫米,true为mm，false为pt
     fontSizeLangCN:true,//true中文字号，false英文字号
