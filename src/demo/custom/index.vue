@@ -163,8 +163,8 @@ export default {
       scaleMin: 0.5,
       // 自定义纸张
       paperPopVisible: false,
-      paperWidth: '220',
-      paperHeight: '80',
+      paperWidth: '100',
+      paperHeight: '150',
       lastjson: '',
     }
   },
