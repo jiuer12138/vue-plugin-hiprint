@@ -7543,7 +7543,8 @@ var hiprint = function (t) {
   jQuery, n = "connected", i = "reconnecting", window.hiwebSocket = {
     opened: !1,
     name: "webSockets",
-    host: "http://192.168.31.139:17521",
+    //host: "http://192.168.31.139:17521",
+    host: "http://127.0.0.1:17521",
     token: null,
     reconnectTimeout: 6e4,
     reconnectWindowSetTimeout: null,
