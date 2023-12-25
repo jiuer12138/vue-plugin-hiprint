@@ -1,6 +1,6 @@
 import $ from "jquery";
-import i18n from "@/demo/design/i18nUtil";
 const defaultConfig = window.HIPRINT_CONFIG
+const i18n = window.HIPRINT_I18N
 export default ( function () {
     function t() {
         this.name = "coordinate";

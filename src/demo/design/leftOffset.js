@@ -1,5 +1,5 @@
 import $ from "jquery";
-import i18n from "@/demo/design/i18nUtil";
+const i18n = window.HIPRINT_I18N
 const defaultConfig = window.HIPRINT_CONFIG
 
 export default (function () {

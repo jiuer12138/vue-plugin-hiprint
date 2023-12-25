@@ -93,7 +93,7 @@ var i18n = {
     return str
   },
 }
-
+window.HIPRINT_I18N = i18n;
 var hiprint = function (t) {
   var e = {};
 
