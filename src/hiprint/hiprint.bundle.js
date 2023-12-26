@@ -18,7 +18,11 @@ function _instanceof(left, right) {
     return left instanceof right;
   }
 }
-
+//计算表达式的值
+function evil(fn) {
+  var Fn = Function;  //一个变量指向Function，防止有些前端编译工具报错
+  return new Fn('return ' + fn)();
+}
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
     _typeof = function _typeof(obj) {
@@ -1333,7 +1337,7 @@ var hiprint = function (t) {
         var formatter = void 0;
         if (this.printElementType.formatter && (formatter = this.printElementType.formatter), this.options.formatter) try {
           var s = "formatter=" + this.options.formatter;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -1342,7 +1346,7 @@ var hiprint = function (t) {
         var fnstyler = void 0;
         if (this.printElementType.styler && (fnstyler = this.printElementType.styler), this.options.styler) try {
           var s = "fnstyler=" + this.options.styler;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -1860,7 +1864,7 @@ var hiprint = function (t) {
           if (!t.checked) return;
           var rowsColumnsMerge = ''
           if (n.rowsColumnsMerge) {
-            eval('rowsColumnsMerge=' + n.rowsColumnsMerge)
+            evil('rowsColumnsMerge=' + n.rowsColumnsMerge)
             var rowsColumnsArr = rowsColumnsMerge(e, t, i, rowIndex, tableData, printData) || [1, 1]
             var r = $(`<td style = 'display:${!(rowsColumnsArr[0] && rowsColumnsArr[1]) ? "none" : ""}' rowspan = '${rowsColumnsArr[0]}' colspan = '${rowsColumnsArr[1]}'></td>`);
           } else {
@@ -2046,7 +2050,7 @@ var hiprint = function (t) {
         }
         if (tablePrintElementType.groupFieldsFormatter && (groupFieldsFormatter = tablePrintElementType.groupFieldsFormatter), options.groupFieldsFormatter) try {
           var s = "groupFieldsFormatter=" + options.groupFieldsFormatter;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -2055,7 +2059,7 @@ var hiprint = function (t) {
         var groupFormatter = void 0;
         if (tablePrintElementType.groupFormatter && (groupFormatter = tablePrintElementType.groupFormatter), options.groupFormatter) try {
           var s = "groupFormatter=" + options.groupFormatter;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -2064,7 +2068,7 @@ var hiprint = function (t) {
         var groupFooterFormatter = void 0;
         if (tablePrintElementType.groupFooterFormatter && (groupFooterFormatter = tablePrintElementType.groupFooterFormatter), options.groupFooterFormatter) try {
           var s = "groupFooterFormatter=" + options.groupFooterFormatter;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -2073,7 +2077,7 @@ var hiprint = function (t) {
         var footerFormatter = void 0;
         if (tablePrintElementType.footerFormatter && (footerFormatter = tablePrintElementType.footerFormatter), options.footerFormatter) try {
           var s = "footerFormatter=" + options.footerFormatter;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -2082,7 +2086,7 @@ var hiprint = function (t) {
         var rowStyler = void 0;
         if (tablePrintElementType.rowStyler && (rowStyler = tablePrintElementType.rowStyler), options.rowStyler) try {
           var s = "rowStyler=" + options.rowStyler;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -2091,7 +2095,7 @@ var hiprint = function (t) {
         var tableSummaryFormatter = void 0;
         if (column.tableSummaryFormatter && (tableSummaryFormatter = column.tableSummaryFormatter), column.tableSummaryFormatter) try {
           var s = "tableSummaryFormatter=" + column.tableSummaryFormatter;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -2100,7 +2104,7 @@ var hiprint = function (t) {
         var styler = void 0;
         if (column.styler && (styler = column.styler), column.styler2) try {
           var s = "styler=" + column.styler2;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -2109,7 +2113,7 @@ var hiprint = function (t) {
         var stylerHeader = void 0;
         if (column.stylerHeader && (stylerHeader = column.stylerHeader), column.stylerHeader) try {
           var s = "stylerHeader=" + column.stylerHeader;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -2118,7 +2122,7 @@ var hiprint = function (t) {
         var renderFormatter = void 0;
         if (column.renderFormatter && (renderFormatter = column.renderFormatter), column.renderFormatter) try {
           var s = "renderFormatter=" + column.renderFormatter;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -2127,7 +2131,7 @@ var hiprint = function (t) {
         var formatter = void 0;
         if (column.formatter && (formatter = column.formatter), column.formatter2) try {
           var s = "formatter=" + column.formatter2;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -5861,7 +5865,7 @@ var hiprint = function (t) {
         var footerFormatter = void 0;
         if (this.printElementType.footerFormatter && (footerFormatter = this.printElementType.footerFormatter), this.options.footerFormatter) try {
           var s = "footerFormatter=" + this.options.footerFormatter;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -5870,7 +5874,7 @@ var hiprint = function (t) {
         var gridColumnsFooterFormatter = void 0;
         if (this.printElementType.gridColumnsFooterFormatter && (gridColumnsFooterFormatter = this.printElementType.gridColumnsFooterFormatter), this.options.gridColumnsFooterFormatter) try {
           var s = "gridColumnsFooterFormatter=" + this.options.gridColumnsFooterFormatter;
-          eval(s);
+          evil(s);
         } catch (t) {
           console.log(t);
         }
@@ -8341,7 +8345,7 @@ var hiprint = function (t) {
         this.paperNumberDisabled ? i.hide() : n && this.index % 2 == 1 && (i[0].style.left = "", i.css("right", this.paperNumberLeft + "pt"));
       }, t.prototype.formatPaperNumber = function (t, e) {
         this.createWaterMark(false, t, this.watermarkOptions);
-        return eval("`" + (this.paperNumberFormat ? this.paperNumberFormat : this.defaultPaperNumberFormat).replace("paperNo",t).replace("paperCount",e) + "`");
+        return evil("`" + (this.paperNumberFormat ? this.paperNumberFormat : this.defaultPaperNumberFormat).replace("paperNo",t).replace("paperCount",e) + "`");
       }, t.prototype.dragHeadLineOrFootLine = function (t, e, n) {
         var i = this;
         t.hidraggable({
