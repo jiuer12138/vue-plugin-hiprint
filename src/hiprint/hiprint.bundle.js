@@ -9608,10 +9608,17 @@ var hiprint = function (t) {
       }, t.prototype.zoom = function (s, p) {
         if (p) {
           this.scale = s
+          var el =$('.hiprint-printPaper-content')
+           el && el.css("transform", "scale(" + s + ")");
+            if (s > 1) {
+              el.css("transform-origin", "-" + s + "% -" + s + "%");
+            } else {
+              el.css("transform-origin", "0 0");
+            }
         } else {
           this.scale = void 0
+          this.designPaper.zoom(s);
         }
-        this.designPaper.zoom(s);
       }, t.prototype.getTarget = function () {
         return this.target;
       }, t.prototype.enable = function () {
